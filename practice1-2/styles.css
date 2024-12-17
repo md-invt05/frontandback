@@ -1,0 +1,346 @@
+body {
+    font-family: "Lato", sans-serif;
+    line-height: 1.35;
+    color: #333;
+    width: 100%;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-img {
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 0.5em;
+}
+
+/* Медиа-запрос для уменьшения логотипа на маленьких экранах */
+@media (max-width: 576px) {
+    .logo-img {
+        max-width: 50px; /* Уменьшение логотипа на экранах меньшего размера */
+        max-height: 50px;
+    }
+}
+
+.info {
+    color: rgb(255, 255, 255);
+    width: 22%;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Навигация */
+.main-nav {
+    padding: 10px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Кнопка */
+.button {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    letter-spacing: 2px;
+    margin: 0 20px;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: #fff;
+}
+
+.button:hover:before {
+    left: 95%;
+}
+
+.button:active {
+    transform: scale(0.98, 0.98);
+}
+/* Уменьшаем ширину карточек */
+.card {
+    transform: scale(0.85); /* Уменьшаем карточки на 15% */
+    transition: transform 0.3s ease;
+}
+
+/* Уменьшаем отступы внутри карточки */
+.card-body {
+    padding: 10px 15px; /* Меньше отступы */
+}
+
+/* Уменьшаем изображения */
+.card-img-top {
+    max-width: 90%;
+    height: auto;
+}
+/* Основное меню */
+.main-nav.active ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,48,73);
+    width: 200px;
+    padding: 20px;
+}
+
+.main-nav.active ul li {
+    margin-right: 0;
+}
+
+/* Flexbox для бокового меню */
+aside {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1%;
+    background-color: #fdf0d5;
+}
+
+aside p {
+    margin-left: 5%;
+}
+
+aside nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside nav ul li {
+    margin-left: 5%;
+    margin-bottom: 10px;
+}
+
+aside nav ul li a {
+    text-align: center;
+    display: inline-block;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Контент */
+.content1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content1 img {
+    width: 200px;
+    height: 200px;
+    margin-right: 10%;
+    border-radius: 0.5em;
+}
+
+/* Форма */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    cursor: pointer;
+    padding: 30px;
+    overflow-y: auto;
+    display: none;
+}
+
+.modal__main {
+    position: relative;
+    max-width: 450px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    color: #000;
+    border-radius: 16px;
+    padding: 30px;
+    cursor: default;
+    border: 3px solid rgb(39, 38, 38);
+}
+
+.modal__title {
+    margin-bottom: 30px;
+}
+
+.modal__close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.modal__form {
+    margin-top: 30px;
+    display: block;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 71%;
+    font-family: cursive;
+    border: thin solid black;
+}
+
+select {
+    margin-right: 49.5%;
+    width: 23%;
+    font-family: cursive;
+    border: thin solid black;
+    cursor: pointer;
+}
+
+.date {
+    width: 22%;
+    margin-right: 49.5%;
+    cursor: pointer;
+}
+
+textarea {
+    width: 71%;
+    height: 70px;
+    margin-left: 4%;
+    border: thin solid black;
+    font-family: cursive;
+}
+
+.checkbox {
+    width: 15px;
+    cursor: pointer;
+}
+
+.submit {
+    background-color: transparent;
+    width: 50%;
+    margin-left: 25%;
+    cursor: pointer;
+}
+
+.pdf_title {
+    width: 100%;
+    height: 700px;
+}
+.carousel-item img {
+    height: 600px; /* Устанавливаем высоту для изображений */
+    object-fit: cover; /* Обрезаем изображения, чтобы они заполнили контейнер */
+    width: 100%; /* Ширина изображения 100% от ширины контейнера */
+}
+
+/* Медиа-запрос для уменьшения размера на мобильных устройствах */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px; /* Уменьшаем высоту изображений на мобильных устройствах */
+    }
+}
+
+/* Делает заголовок таблицы светлым, как на изображении */
+.table-light th {
+    background-color: #f8f9fa; /* светлый серый фон */
+    font-weight: bold;
+}
+
+/* Изменяет границы ячеек и строк */
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+
+/* Убирает верхнюю границу для верхней строки и левой границы для первого столбца */
+.table th:first-child,
+.table td:first-child {
+    border-left: none;
+}
+
+.table th, .table td {
+    text-align: center; /* Центрирует содержимое */
+    vertical-align: middle; /* Вертикальное выравнивание по центру */
+}
+
+.container_content {
+    padding-top: 30px
+}
+
+iframe {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+footer {
+    color: white;
+    background: rgb(0,48,73);
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+.nnpictures {
+    display: flex;
+    gap: 10px;
+}
+
+.vk img {
+    border-radius: 0.5em;
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 5px; /* Добавляет отступы вокруг кнопок */
+}
+
+.container-fluid{
+    color: white;
+    background: rgb(0,48,73);
+}
